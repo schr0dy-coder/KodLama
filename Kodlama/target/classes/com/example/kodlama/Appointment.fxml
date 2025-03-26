@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.collections.FXCollections?>
+
+<?import java.lang.String?>
+<AnchorPane stylesheets="stylesSheets/appointment.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.kodlama.AppointmentController">
+
+    <children>
+        <VBox fx:id="mainVBox" alignment="CENTER" spacing="10.0" prefWidth="400.0" prefHeight="350.0"
+              layoutX="100.0" layoutY="50.0">
+            <children>
+                <!-- Title -->
+                <Label text="Hospital Appointment Booking" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <!-- Patient Name -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Patient Name:"/>
+                    <TextField fx:id="nameField" promptText="Enter full name"/>
+                </HBox>
+
+                <!-- Age and Gender -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Age:"/>
+                    <TextField fx:id="ageField" promptText="Enter age" maxWidth="50"/>
+
+                    <Label text="Gender:"/>
+                    <ChoiceBox fx:id="genderBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Male"/>
+                                <String fx:value="Female"/>
+                                <String fx:value="Other"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+
+                <!-- Department Selection -->
+                <HBox spacing="10.0">
+                    <Label text="Department:"/>
+                    <ChoiceBox fx:id="departmentBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Cardiology"/>
+                                <String fx:value="Dermatology"/>
+                                <String fx:value="Neurology"/>
+                                <String fx:value="Orthopedics"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+
+                <!-- Doctor Selection -->
+                <HBox spacing="10.0">
+                    <Label text="Doctor:"/>
+                    <ChoiceBox fx:id="doctorBox" prefWidth="200.0"/>
+                </HBox>
+
+                <!-- Date and Time -->
+                <HBox spacing="10.0">
+                    <Label text="Date:"/>
+                    <DatePicker fx:id="datePicker"/>
+                    <Label text="Time:"/>
+                    <ChoiceBox fx:id="timeBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="09:00 AM"/>
+                                <String fx:value="11:00 AM"/>
+                                <String fx:value="02:00 PM"/>
+                                <String fx:value="04:00 PM"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+
+                <!-- Buttons -->
+                <HBox spacing="20" alignment="CENTER">
+                    <Button fx:id="bookButton" text="Book Appointment" onAction="#handleBook"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel"
+                            style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
+

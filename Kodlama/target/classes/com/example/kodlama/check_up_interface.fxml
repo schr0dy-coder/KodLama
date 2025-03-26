@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.kodlama.CheckUpController"
+      spacing="15" alignment="CENTER"
+      style="-fx-background-color: #f0f4f8; -fx-padding: 20;">
+
+    <!-- Title -->
+    <Label text="Symptom Checker" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333333;">
+        <font>
+            <Font name="Arial" size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Symptom Input -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Symptoms:" style="-fx-font-size: 14px;" />
+        <TextField fx:id="symptomInput" promptText="Enter your symptoms" prefWidth="300.0"
+                   style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cccccc;" />
+    </HBox>
+
+    <!-- Duration Input -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Duration:" style="-fx-font-size: 14px;" />
+        <TextField fx:id="durationField" promptText="Duration of symptoms (e.g., 2 days)" prefWidth="300.0"
+                   style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cccccc;" />
+    </HBox>
+
+    <!-- Check Button -->
+    <Button fx:id="checkButton" text="Check Symptoms" onAction="#analyzeSymptoms"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 5;" />
+
+    <!-- Diagnosis List -->
+    <Label text="Possible Diagnoses:" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+    <ListView fx:id="diagnosisList" prefHeight="100.0" prefWidth="400.0"
+              style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cccccc;" />
+
+    <!-- Possible Help -->
+    <Label text="Possible Help:" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+    <TextArea fx:id="possibleHelpArea" editable="false" wrapText="true" prefHeight="80.0" prefWidth="400.0"
+              style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cccccc;" />
+
+    <!-- Advice -->
+    <Label text="Advice:" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+    <TextArea fx:id="adviceArea" editable="false" wrapText="true" prefHeight="80.0" prefWidth="400.0"
+              style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #cccccc;" />
+
+    <!-- Call Doctor Button -->
+    <Button fx:id="callDoctorButton" text="Call Doctor" onAction="#handleCallDoctor"
+            style="-fx-background-color: #0078d4; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 5;" />
+
+    <!-- Padding for the VBox -->
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+    </padding>
+</VBox>

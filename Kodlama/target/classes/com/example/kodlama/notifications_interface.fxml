@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.kodlama.NotificationsController"
+      spacing="10"
+      style="-fx-padding: 20;">
+
+    <Label text="Notifications" style="-fx-font-weight: bold;">
+        <font>
+            <Font size="24" />
+        </font>
+    </Label>
+
+    <ListView fx:id="notificationsList" prefHeight="400" prefWidth="500"
+              style="-fx-background-color: #f0f0f0; -fx-control-inner-background: #ffffff;"/>
+</VBox>

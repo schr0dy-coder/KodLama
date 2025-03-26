@@ -1,0 +1,124 @@
+/* Root Styles */
+.root {
+    -fx-background-color: #e2f8fb; /* Light blue background */
+    -fx-font-family: "Bookman Old Style", serif;
+}
+
+/* Sidebar */
+#sidebar {
+    -fx-background-color: linear-gradient(to bottom, #5ab6ce, #72deec); /* Gradient effect */
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.5, 2, 2);
+    -fx-spacing: 15px; /* Spacing between buttons */
+    -fx-alignment: center;
+}
+
+/* Sidebar Buttons */
+.button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 10px;
+    -fx-padding: 12px 20px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-graphic-text-gap: 25px;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Exit Button */
+#EXIT {
+    -fx-background-color: #ff5252; /* Red button for exit */
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+#EXIT:hover {
+    -fx-background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Menu Button */
+#menuButton {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-text-fill: #5ab6ce;
+    -fx-border-radius: 8px;
+    -fx-transition: all 0.3s;
+}
+
+#menuButton:hover {
+    -fx-background-color: rgba(90, 182, 206, 0.2);
+}
+
+/* Text Styling */
+.text {
+    -fx-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 1, 1);
+    -fx-alignment: center;
+    -fx-padding: 10px;
+}
+
+/* User Name */
+#userText {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-fill: white;
+    -fx-text-alignment: center;
+    -fx-padding: 10px;
+}
+
+/* Icons */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-margin: 10px;
+}
+
+.image-view:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-transition: all 0.3s;
+}
+
+/* Sidebar Logo */
+#sidebarLogo {
+    -fx-padding: 15px;
+    -fx-margin: 10px;
+    -fx-alignment: center;
+}
+
+/* Adjust Button Text and Alignment */
+VBox .button {
+    -fx-text-alignment: left;
+    -fx-content-display: left;
+}
+
+/* Improve spacing and position for mobile */
+@media screen and (max-width: 768px) {
+    .root {
+        -fx-font-size: 14px;
+    }
+
+    #sidebar {
+        -fx-pref-width: 100%;
+    }
+
+    .button {
+        -fx-font-size: 16px;
+    }
+}

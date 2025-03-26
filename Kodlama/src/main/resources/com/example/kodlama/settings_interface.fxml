@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.kodlama.SettingsController"
+      spacing="15"
+      style="-fx-padding: 20;">
+
+    <Label text="Application Settings" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Name:" minWidth="100"/>
+        <TextField fx:id="nameField" HBox.hgrow="ALWAYS" promptText="Enter your name"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Email:" minWidth="100"/>
+        <TextField fx:id="emailField" HBox.hgrow="ALWAYS" promptText="Enter your email"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Theme:" minWidth="100"/>
+        <ComboBox fx:id="themeSelector" HBox.hgrow="ALWAYS" promptText="Select Theme"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Notifications:" minWidth="100"/>
+        <CheckBox fx:id="notificationToggle" text="Enable Notifications"/>
+    </HBox>
+
+    <Button text="Save Settings" onAction="#saveSettings"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white;"
+            maxWidth="200"/>
+</VBox>

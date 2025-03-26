@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" stylesheets="stylesSheets/main.css" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="783.0" style="-fx-background-color: #e2f8fb;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kodlama.MainInterfaceController">
+   <children>
+      <Button fx:id="menuButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="249.0" style="-fx-background-color: #e2f8fb;" text="View menu" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="530.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fx:id="menuPanel" fitHeight="27.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/apps.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <!-- Filled AnchorPane with medical content -->
+      <AnchorPane fx:id="contentPane" layoutY="33.0" prefHeight="580.0" prefWidth="783.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="-0.20000000000004547">
+         <children>
+            <!-- Welcome Section -->
+            <VBox spacing="20" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Label fx:id="welcomeLabel" text="Welcome to Your Health Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dateLabel" text="Current Date: [Dynamic]" style="-fx-font-size: 14px; -fx-text-fill: #666666;">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <!-- Medical Image -->
+            <ImageView fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="80.0">
+               <image>
+                  <Image url="@images/stethoscope.png" /> <!-- Ensure this image exists in your resources -->
+               </image>
+            </ImageView>
+
+            <!-- Health Tip -->
+            <VBox spacing="10" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="300.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Label text="Daily Health Tip" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #0078d4;">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="healthTip" text="Stay hydrated and take short walks to boost your energy!" wrappingWidth="500.0" style="-fx-font-size: 14px; -fx-fill: #333333;">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="sidebar" alignment="BASELINE_LEFT" layoutX="-1.0" layoutY="33.0" prefHeight="580.0" prefWidth="249.0" style="-fx-background-color: #72deec;" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="38.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <ImageView fitHeight="164.0" fitWidth="209.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/circle-user.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="User" textAlignment="CENTER" wrappingWidth="245.27308464050293">
+               <font>
+                  <Font name="Bookman Old Style" size="25.0" />
+               </font>
+            </Text>
+            <Button fx:id="checkUpButton" graphicTextGap="65.0" mnemonicParsing="false" onAction="#openCheckUpInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Check-Up" textAlignment="RIGHT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="notificationButton" graphicTextGap="15.0" mnemonicParsing="false" onAction="#openNotificationsInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Notification" textAlignment="RIGHT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/bell-notification-social-media.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="settingsButton" graphicTextGap="45.0" mnemonicParsing="false" onAction="#openSettingsInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Settings" textAlignment="RIGHT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="medicationScheduleButton" graphicTextGap="70.0" mnemonicParsing="false" onAction="#openMedicationScheduleInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Medicine" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="AppointmentButton" graphicTextGap="60.0" mnemonicParsing="false" onAction="#openAppointmentInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Appointment" textAlignment="RIGHT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/about.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="EXIT" graphicTextGap="80.0" mnemonicParsing="false" onAction="#Exit" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Exit" textAlignment="RIGHT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
