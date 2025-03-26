@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:controller="com.example.kodlama.helloviewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kodlama.MainInterfaceController">
    <children>
-      <VBox alignment="BASELINE_LEFT" prefHeight="612.0" prefWidth="240.0" style="-fx-background-color: #72deec;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="sidebar" alignment="BASELINE_LEFT" prefHeight="612.0" prefWidth="240.0" style="-fx-background-color: #72deec;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -38,19 +38,19 @@
                   <Font name="Bookman Old Style" size="25.0" />
                </font>
             </Text>
-            <Button fx:id="homeButton" graphicTextGap="60.0" mnemonicParsing="false" onAction="#Open" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="HOME" textFill="WHITE" VBox.vgrow="ALWAYS">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
+            <Button fx:id="checkUpButton" graphicTextGap="65.0" mnemonicParsing="false" onAction="#openCheckUpInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Check-Up" textAlignment="RIGHT" textFill="WHITE">
                <graphic>
-                  <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@home.png" />
+                        <Image url="@user.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
             </Button>
-            <Button fx:id="notificationButton" graphicTextGap="15.0" mnemonicParsing="false" onAction="#Open" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Notification" textAlignment="RIGHT" textFill="WHITE">
+            <Button fx:id="notificationButton" graphicTextGap="15.0" mnemonicParsing="false" onAction="#openNotificationsInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Notification" textAlignment="RIGHT" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -62,7 +62,7 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="settingsButton" graphicTextGap="45.0" mnemonicParsing="false" onAction="#Open" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Settings" textAlignment="RIGHT" textFill="WHITE">
+            <Button fx:id="settingsButton" graphicTextGap="45.0" mnemonicParsing="false" onAction="#openSettingsInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Settings" textAlignment="RIGHT" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -74,7 +74,10 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Button>
-            <Button fx:id="userButton" graphicTextGap="85.0" mnemonicParsing="false" onAction="#Open" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="" textAlignment="RIGHT" textFill="WHITE">
+            <Button fx:id="medicationScheduleButton" graphicTextGap="70.0" mnemonicParsing="false" onAction="#openMedicationScheduleInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="Medicine" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -82,11 +85,8 @@
                      </image>
                   </ImageView>
                </graphic>
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
             </Button>
-            <Button fx:id="About" graphicTextGap="60.0" mnemonicParsing="false" onAction="#Open" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="About" textAlignment="RIGHT" textFill="WHITE">
+            <Button fx:id="aboutButton" graphicTextGap="60.0" mnemonicParsing="false" onAction="#openAboutInterface" prefHeight="26.0" prefWidth="249.0" style="-fx-background-color: #72deec;" text="About" textAlignment="RIGHT" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
